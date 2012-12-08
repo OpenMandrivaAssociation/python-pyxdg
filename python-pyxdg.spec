@@ -42,3 +42,10 @@ PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot} --record=IN
 
 %files -f INSTALLED_FILES
 %doc AUTHORS COPYING ChangeLog README TODO
+
+
+%changelog
+* Sat May 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.19-1
++ Revision: 796457
+- imported package python-pyxdg
+
