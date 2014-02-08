@@ -1,6 +1,6 @@
 %define oname   pyxdg
 %define version 0.19
-%define release 1
+%define release 2
 
 Name:             python-pyxdg
 Summary:          Python library to access freedesktop.org standards
