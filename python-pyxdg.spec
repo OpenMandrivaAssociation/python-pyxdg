@@ -1,19 +1,16 @@
 %define oname   pyxdg
-%define version 0.19
-%define release 1
 
 Name:             python-pyxdg
 Summary:          Python library to access freedesktop.org standards
-Version:          %{version}
-Release:          %{release}
+Version:          0.25
+Release:          2
 BuildArch:        noarch
-Source0:          http://www.freedesktop.org/~lanius/%{oname}-%{version}.tar.gz
+Source0:          http://people.freedesktop.org/~takluyver/pyxdg-%{version}.tar.gz
 URL:              http://www.freedesktop.org/Software/pyxdg
 Group:            System/Libraries
 License:          LGPLv2
 BuildRequires:    python-devel
-Provides:         pyxdg
-Obsoletes:        pyxdg < 0.19-3
+%rename           pyxdg
 
 %description
 PyXDG is a python library to access freedesktop.org standards. 
@@ -42,10 +39,3 @@ PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot} --record=IN
 
 %files -f INSTALLED_FILES
 %doc AUTHORS COPYING ChangeLog README TODO
-
-
-%changelog
-* Sat May 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.19-1
-+ Revision: 796457
-- imported package python-pyxdg
-
