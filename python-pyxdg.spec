@@ -1,16 +1,16 @@
-%define oname   pyxdg
+%define oname pyxdg
 
-Name:             python-pyxdg
-Summary:          Python library to access freedesktop.org standards
-Version:          0.25
-Release:          2
-BuildArch:        noarch
-Source0:          http://people.freedesktop.org/~takluyver/pyxdg-%{version}.tar.gz
-URL:              http://www.freedesktop.org/Software/pyxdg
-Group:            System/Libraries
-License:          LGPLv2
-BuildRequires:    python-devel
-%rename           pyxdg
+Name:		python-pyxdg
+Summary:	Python library to access freedesktop.org standards
+Version:	0.25
+Release:	3
+Group:		System/Libraries
+License:	LGPLv2
+URL:		http://www.freedesktop.org/Software/pyxdg
+Source0:	http://people.freedesktop.org/~takluyver/pyxdg-%{version}.tar.gz
+BuildArch:	noarch
+BuildRequires:	pkgconfig(python)
+%rename pyxdg
 
 %description
 PyXDG is a python library to access freedesktop.org standards. 
@@ -29,13 +29,13 @@ Currently supported are:
 	* Shared-MIME-Database Specification 0.13 
 
 %prep
-%setup -qn %{oname}-%{version}
+%autosetup -n %{oname}-%{version}
 
 %build
-python setup.py build
+%py_build
 
 %install
-PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
+%py_install -- --record=INSTALLED_FILES
 
 %files -f INSTALLED_FILES
 %doc AUTHORS COPYING ChangeLog README TODO
