@@ -6,7 +6,7 @@ Version:	0.25
 Release:	3
 Group:		System/Libraries
 License:	LGPLv2
-URL:		http://www.freedesktop.org/Software/pyxdg
+URL:		https://www.freedesktop.org/Software/pyxdg
 Source0:	http://people.freedesktop.org/~takluyver/pyxdg-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
