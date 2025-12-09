@@ -2,14 +2,15 @@
 
 Name:		python-pyxdg
 Summary:	Python library to access freedesktop.org standards
-Version:	0.25
-Release:	3
+Version:	0.28
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2
 URL:		https://www.freedesktop.org/Software/pyxdg
-Source0:	http://people.freedesktop.org/~takluyver/pyxdg-%{version}.tar.gz
+Source0:	https://github.com/takluyver/pyxdg/archive/refs/tags/rel-%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	python
+BuildSystem:	python
 %rename pyxdg
 
 %description
@@ -28,14 +29,7 @@ Currently supported are:
 
 	* Shared-MIME-Database Specification 0.13 
 
-%prep
-%autosetup -n %{oname}-%{version}
-
-%build
-%py_build
-
-%install
-%py_install -- --record=INSTALLED_FILES
-
-%files -f INSTALLED_FILES
+%files
 %doc AUTHORS COPYING ChangeLog README TODO
+%{py_puresitedir}/xdg
+%{py_puresitedir}/pyxdg-%{version}-*.*-info
